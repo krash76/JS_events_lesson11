@@ -6,6 +6,8 @@ const square = document.querySelector("#square");
 const circle = document.querySelector("#circle");
 const circleBtn = document.querySelector("#e_btn");
 const inputRange = document.querySelector("input[type='range']");
+const rangeSpan = document.getElementById("range-span");
+rangeSpan.textContent = 50;
 
 circleBtn.style.display = "none";
 
@@ -14,6 +16,7 @@ btn.addEventListener("click", () => {
 });
 
 inputRange.addEventListener("input", () => {
+  rangeSpan.textContent = inputRange.value;
   circle.style.width = inputRange.value + "%";
   circle.style.height = inputRange.value + "%";
 });
