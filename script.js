@@ -8,6 +8,13 @@ const circleBtn = document.querySelector("#e_btn");
 const inputRange = document.querySelector("input[type='range']");
 const rangeSpan = document.getElementById("range-span");
 rangeSpan.textContent = 50;
+const changeRange = () => {
+  rangeSpan.textContent = inputRange.value;
+};
+const changeCircle =() => {
+circle.style.width = inputRange.value + "%";
+  circle.style.height = inputRange.value + "%";
+};
 
 circleBtn.style.display = "none";
 
@@ -16,9 +23,8 @@ btn.addEventListener("click", () => {
 });
 
 inputRange.addEventListener("input", () => {
-  rangeSpan.textContent = inputRange.value;
-  circle.style.width = inputRange.value + "%";
-  circle.style.height = inputRange.value + "%";
+  changeRange();
+  changeCircle();
 });
 
 
